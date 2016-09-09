@@ -9,7 +9,7 @@
                 "iam:GetUser",
                 "iam:ListMFADevices"
             ],
-            "Resource": "*",
+            "Resource": "arn:aws:iam::*:user/${aws:username}",
             "Condition": {
                 "Null": {
                     "aws:MultiFactorAuthAge": "true"
@@ -24,7 +24,7 @@
                 "iam:GetUser",
                 "iam:ListMFADevices"
             ],
-            "Resource": "*",
+            "Resource": "arn:aws:iam::*:user/${aws:username}",
             "Condition": {
                 "NumericGreaterThan": {
                     "aws:MultiFactorAuthAge": "28800"
